@@ -6,6 +6,7 @@ require "./kemal/*"
 require "./kemal/dsl"
 require "./kemal/ext/*"
 require "./kemal/helpers/*"
+require "./app"
 
 module Kemal
   # Overload of self.run with the default startup logging

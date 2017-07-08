@@ -1,5 +1,5 @@
 require "spec"
-require "../src/*"
+require "../src/kemal"
 
 include Kemal
 
