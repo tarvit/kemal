@@ -1,5 +1,5 @@
 module Kemal
-  abstract class SocketController
+  abstract class SocketAction
     getter :context, :socket
 
     def initialize(@socket : HTTP::WebSocket, @context : HTTP::Server::Context)

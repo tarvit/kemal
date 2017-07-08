@@ -1,5 +1,5 @@
 module Kemal
-  abstract class Controller
+  abstract class Action
     getter :context
 
     def initialize(@context : HTTP::Server::Context)

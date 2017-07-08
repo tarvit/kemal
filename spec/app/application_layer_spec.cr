@@ -3,7 +3,7 @@ require "../spec_helper"
 class MyApp < Kemal::Application
 end
 
-class OkController < Kemal::Controller
+class OkController < Kemal::Action
   def process
     "OK!"
   end
