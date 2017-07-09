@@ -2,15 +2,15 @@ module Kemal
   class Router
     include Kemal::DSL
 
-    def add(method, path, controller_class)
+    def add(method, path, action_class)
       action(method, path) do |context|
-        controller_class.new(context).process
+        action_class.new(context).process
       end
     end
 
-    def socket(path, controller_class)
+    def socket(path, action_class)
       ws(path) do |socket, context|
-        controller_class.new(socket, context).process
+        action_class.new(socket, context).process
       end
     end
   end

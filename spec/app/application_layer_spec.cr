@@ -3,18 +3,18 @@ require "../spec_helper"
 class MyApp < Kemal::Application
 end
 
-class OkController < Kemal::Action
+class OkAction < Kemal::Action
   def process
     "OK!"
   end
 end
 
 MyApp.configure_routes do |routes|
-  routes.add "get", "/ok", OkController
+  routes.add "get", "/ok", OkAction
 end
 
 describe "Application Layer" do
-  it "routes to controller" do
+  it "routes to Action" do
     request = HTTP::Request.new("GET", "/ok")
     client_response = call_request_on_app(request)
     client_response.body.should eq("OK!")
