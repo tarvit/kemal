@@ -83,6 +83,10 @@ module Kemal
       ERROR_HANDLERS[status_code] = ->(context : HTTP::Server::Context, error : Exception) { handler.call(context, error).to_s }
     end
 
+    def remove_error_handler(status_code)
+      ERROR_HANDLERS.delete status_code
+    end
+
     def extra_options(&@extra_options : OptionParser ->)
     end
 
