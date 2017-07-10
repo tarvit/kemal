@@ -20,9 +20,9 @@ describe "Application Layer" do
     client_response.body.should eq("OK!")
   end
 
-  it "returns empty response when invalid path" do
-    request = HTTP::Request.new("GET", "/")
+  it "returns 404 code when invalid path" do
+    request = HTTP::Request.new("GET", "/not_ok")
     client_response = call_request_on_app(request)
-    client_response.body.should eq("")
+    client_response.status_code.should eq(404)
   end
 end
